@@ -1,6 +1,6 @@
-# GGUF (Groovy GGUF Utility Functions)
+# llmcli
 
-GGUF is a powerful Go application for managing and interacting with large language models using llama.cpp. It provides a comprehensive set of functions for downloading, running, and chatting with AI models, as well as managing a local database of model information.
+A modern, Go-based command-line interface for managing, downloading, and interacting with Large Language Models, specifically optimized for GGUF format models.
 
 ## 🚀 Features
 
@@ -12,8 +12,7 @@ GGUF is a powerful Go application for managing and interacting with large langua
 - Tokenize and detokenize text
 - Monitor running model servers
 - Fetch recent and trending GGUF models from Hugging Face
-
-![gguf](gguf-old/gguf.png)
+- Beautiful, colorized terminal output
 
 ## 📋 Prerequisites
 
@@ -28,64 +27,107 @@ Before you begin, ensure you have the following installed:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/gguf.git
-   cd gguf
+   git clone https://github.com/garyblankenship/llmcli.git
+   cd llmcli
    ```
 
 2. Build the application:
    ```
-   go build -o gguf cmd/gguf/main.go
+   go build -o llmcli cmd/gguf/main.go
    ```
 
-3. Optionally, add the binary to your PATH for easier access.
+3. Optionally, add the binary to your PATH for easier access:
+   ```
+   cp llmcli /usr/local/bin/
+   ```
 
-## 🎮 Usage
+## 🎮 Usage Examples
 
-Here are some common commands:
+### Browsing Models
+
+```bash
+# Get recent GGUF models from Hugging Face
+llmcli recent
+
+# Get trending GGUF models from Hugging Face
+llmcli trending
+```
+
+### Managing Models
 
 ```bash
 # Download a new model
-./gguf pull bartowski/Qwen2.5-Math-1.5B-Instruct-GGUF
+llmcli pull bartowski/Qwen2.5-Math-1.5B-Instruct-GGUF
 
-# List all models
-./gguf ls
+# List all downloaded models
+llmcli ls
+```
 
+### Using Models
+
+```bash
 # Start a chat session with a model
-./gguf chat model-slug
+llmcli chat model-slug
 
 # Generate embeddings
-./gguf embed model-slug "Your text here"
+llmcli embed model-slug "Your text here"
 
+# Tokenize text
+llmcli tokenize model-slug "Your text here"
+```
+
+### Server Management
+
+```bash
 # Check server health
-./gguf health
+llmcli health
 
 # Show running processes
-./gguf ps
+llmcli ps
 
-# Get recent GGUF models from Hugging Face
-./gguf recent
-
-# Get trending GGUF models from Hugging Face
-./gguf trending
+# Start a server
+llmcli server model-slug
 ```
 
 For a full list of commands, run:
 
 ```bash
-./gguf
+llmcli
 ```
 
 For help with a specific command, use:
 
 ```bash
-./gguf <command> --help
+llmcli <command> --help
+```
+
+## 🧑‍💻 Development
+
+To build the project from source:
+
+```bash
+# Clone the repository
+git clone https://github.com/garyblankenship/llmcli.git
+cd llmcli
+
+# Install dependencies
+go mod download
+
+# Build the binary
+go build -o llmcli cmd/gguf/main.go
+
+# Run tests
+go test ./...
+
+# Format code
+go fmt ./...
 ```
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](gguf-old/LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgements
 
 - [llama.cpp](https://github.com/ggerganov/llama.cpp) for the underlying model server
-- [Hugging Face](https://huggingface.co/) for hosting the models# llmcli
+- [Hugging Face](https://huggingface.co/) for hosting the models
