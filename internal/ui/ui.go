@@ -31,7 +31,7 @@ func PrintError(msg string) {
 
 // PrintHelp prints help for a command
 func PrintHelp(command, description, args string) {
-	fmt.Printf("Usage: gguf %s%s%s %s\n", colorGreen, command, colorReset, args)
+	fmt.Printf("Usage: llm-cli %s%s%s %s\n", colorGreen, command, colorReset, args)
 	fmt.Println(description)
 	fmt.Println()
 	
@@ -43,7 +43,7 @@ func PrintHelp(command, description, args string) {
 
 // PrintUsage prints the usage information
 func PrintUsage() {
-	fmt.Printf("%sUsage:%s gguf %s<command>%s [options]\n\n", colorCyan, colorReset, colorGreen, colorReset)
+	fmt.Printf("%sUsage:%s llm-cli %s<command>%s [options]\n\n", colorCyan, colorReset, colorGreen, colorReset)
 
 	fmt.Printf("%sModel Management:%s\n", colorYellow, colorReset)
 	printCommand("pull <model_id>", "Download a new model")
@@ -71,7 +71,7 @@ func PrintUsage() {
 	printCommand("trending", "Get trending GGUF models")
 	fmt.Println()
 
-	fmt.Printf("%sFor more information, use:%s gguf %s<command> --help%s\n", 
+	fmt.Printf("%sFor more information, use:%s llm-cli %s<command> --help%s\n", 
 		colorMagenta, colorReset, colorGreen, colorReset)
 }
 

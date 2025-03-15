@@ -26,9 +26,9 @@ func Load() (*Config, error) {
 		return nil, err
 	}
 
-	cacheDir := filepath.Join(homeDir, ".cache", "gguf")
+	cacheDir := filepath.Join(homeDir, ".cache", "llm-cli")
 	modelsDir := filepath.Join(cacheDir, "models")
-	dbPath := filepath.Join(cacheDir, "gguf.db")
+	dbPath := filepath.Join(cacheDir, "llm-cli.db")
 
 	// Create directories if they don't exist
 	if err := os.MkdirAll(modelsDir, 0755); err != nil {

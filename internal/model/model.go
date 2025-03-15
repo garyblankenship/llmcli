@@ -13,9 +13,9 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/vampire/gguf/internal/config"
-	"github.com/vampire/gguf/internal/db"
-	"github.com/vampire/gguf/internal/ui"
+	"github.com/garyblankenship/llmcli/internal/config"
+	"github.com/garyblankenship/llmcli/internal/db"
+	"github.com/garyblankenship/llmcli/internal/ui"
 )
 
 // huggingFaceModel represents a model from the Hugging Face API
@@ -153,7 +153,7 @@ func Pull(store *db.Store, cfg *config.Config, modelID string) error {
 	}
 	
 	ui.PrintInfo(fmt.Sprintf("Model added to database with slug: %s", slug))
-	fmt.Printf("To use this model, run: gguf chat %s\n", slug)
+	fmt.Printf("To use this model, run: llm-cli chat %s\n", slug)
 	
 	return nil
 }

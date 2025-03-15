@@ -15,9 +15,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/vampire/gguf/internal/config"
-	"github.com/vampire/gguf/internal/db"
-	"github.com/vampire/gguf/internal/ui"
+	"github.com/garyblankenship/llmcli/internal/config"
+	"github.com/garyblankenship/llmcli/internal/db"
+	"github.com/garyblankenship/llmcli/internal/ui"
 )
 
 // Request types
@@ -148,7 +148,7 @@ func Run(store *db.Store, cfg *config.Config, slug, text string) error {
 	}
 	
 	if text == "" {
-		ui.PrintInfo(fmt.Sprintf("Server for model %s is running. Use 'gguf chat %s' to start a chat session.", slug, slug))
+		ui.PrintInfo(fmt.Sprintf("Server for model %s is running. Use 'llm-cli chat %s' to start a chat session.", slug, slug))
 		return nil
 	}
 	

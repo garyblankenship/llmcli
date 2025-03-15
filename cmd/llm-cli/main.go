@@ -5,11 +5,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/vampire/gguf/internal/config"
-	"github.com/vampire/gguf/internal/db"
-	"github.com/vampire/gguf/internal/model"
-	"github.com/vampire/gguf/internal/server"
-	"github.com/vampire/gguf/internal/ui"
+	"github.com/garyblankenship/llmcli/internal/config"
+	"github.com/garyblankenship/llmcli/internal/db"
+	"github.com/garyblankenship/llmcli/internal/model"
+	"github.com/garyblankenship/llmcli/internal/server"
+	"github.com/garyblankenship/llmcli/internal/ui"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/vampire/gguf
+module github.com/garyblankenship/llmcli
 
 go 1.21
 
