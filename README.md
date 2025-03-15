@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed:
 
 2. Build the application:
    ```
-   go build -o llmcli cmd/gguf/main.go
+   go build -o llmcli cmd/llm-cli/main.go
    ```
 
 3. Optionally, add the binary to your PATH for easier access:
@@ -114,7 +114,7 @@ cd llmcli
 go mod download
 
 # Build the binary
-go build -o llmcli cmd/gguf/main.go
+go build -o llmcli cmd/llm-cli/main.go
 
 # Run tests
 go test ./...
